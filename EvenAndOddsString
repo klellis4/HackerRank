@@ -1,0 +1,54 @@
+/*
+Task
+Given a string, S, of length N that is indexed from 0 to N-1, print its even-indexed and odd-indexed characters as 2 space-separated strings on a single line.
+
+Note: 0 is considered to be an even index.
+
+Input Format
+
+The first line contains an integer, T (the number of test cases).
+Each line i of the T subsequent lines contain a String, S.
+
+Output Format
+
+For each String S, print S's even-indexed characters, followed by a space, followed by S's odd-indexed characters.
+
+*/
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+
+    int t {0};
+    cin >> t;
+
+    for (int i {0}; i < t; i++) {
+        string str {};
+        cin >> str;
+
+        string evens {};
+        string odds {};
+
+        for (int j {0}; j < str.length(); j++) {
+            if (j % 2 == 0) {
+                evens += str.at(j);
+            }
+            else {
+                odds += str.at(j);
+            }
+        }
+
+        cout << evens << " " << odds << endl;
+
+
+    }
+
+    return 0;
+}
